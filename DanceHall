@@ -1,0 +1,26 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DanceHall
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double l = double.Parse(Console.ReadLine());
+            double w = double.Parse(Console.ReadLine());
+            double a = double.Parse(Console.ReadLine());
+
+            double b = (l * 100) * (w * 100);
+            double c = (a * 100) * (a * 100);
+            double d = b / 10;
+            double freeSpace = b - c - d;
+            double dancers = Math.Floor(freeSpace / 7040);
+
+            Console.WriteLine(dancers);
+        }
+    }
+}
