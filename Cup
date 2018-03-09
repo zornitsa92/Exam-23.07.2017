@@ -1,0 +1,53 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Cup
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+
+            if (n % 2 == 0)
+            {
+                int width = 5 * n;
+                int dots = n;
+                int hash = 3 * n;
+                for (int i = 0; i < n / 2; i++)
+                {
+                    Console.WriteLine($"{new string('.', dots)}{new string('#', hash)}{new string('.', dots)}");
+                    dots++;
+                    hash -= 2;
+                }
+
+                int middleDots = (3*n)/ 2;
+                int middle = 2 * n - 2; 
+                for (int i = 0; i < n/2 + 1; i++)
+                {
+
+                    Console.WriteLine($"{new string('.', middleDots)}#{new string('.', middle)}#{new string('.', middleDots)}");
+                    middleDots++;
+                    middle -= 2;
+                }
+
+                Console.WriteLine($"{new string('.', 2*n)}{new string('#', n)}{new string('.', 2*n)}");
+                                               
+                for (int i = 0; i < n/2; i++)
+                {                    
+                   Console.WriteLine($"{new string('.', 2*n-2)}{new string('#', n + 4)}{new string('.', 2*n-2)}");
+                }
+
+                Console.WriteLine($"{new string('.', (width-10)/2)}D^A^N^C^E^{new string('.', (width - 10)/2)}"); 
+
+                for (int i = 0; i < n / 2 + 1; i++)
+                {
+                    Console.WriteLine($"{new string('.', 2 * n - 2)}{new string('#', n + 4)}{new string('.', 2 * n - 2)}");
+                }
+            }
+        }
+    }
+}
